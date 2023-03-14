@@ -1,0 +1,8 @@
+<h1>Review booking request for <%= @flat.address%></h1>
+<h2> <%= @booking.start_date%> - <%= @booking.end_time%> </h2>
+
+<%= simple_form_for [@flat, @booking] do |f| %>
+  <%= f.input :status, collection: ["pending", "accepted", "rejected"] %>
+  <%= f.submit %>
+
+<% end %>
