@@ -1,15 +1,16 @@
-/* Center the login form */
-
 .container {
-    max-width: 400px;
-    margin-top: 50px;
+    max-width: 900px;
+    margin: 50px auto;
 }
-
-
-/* Apply Bootstrap styles to the form */
 
 .form-inputs {
     margin-bottom: 20px;
+}
+
+.card {
+    max-width: 800px;
+    margin-bottom: 40px;
+    border-radius: 30px;
 }
 
 .form-control {
