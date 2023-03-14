@@ -14,7 +14,7 @@
   <h2 padding=5px>Available Flats</h2>
     <div class="cards">
       <% @flats.each do |flat| %>
-        <div class="card-product ">
+        <div class="card-product">
           <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" class="rounded img-fluid " style="height: 300px, width: 300px">
           <div class="card-product-infos">
             <div>
@@ -29,6 +29,6 @@
         </div>
       <% end %>
     </div>
-    
+
   <%= link_to "New flat", new_flat_path(@flat) %>
 </body>
