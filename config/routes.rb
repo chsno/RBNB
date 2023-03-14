@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  get 'bookings/index'
-  get 'bookings/show'
-  get 'bookings/new'
-  get 'bookings/create'
-  get 'flats/index'
-  get 'flats/show'
+  # get 'bookings/index'
+  # get 'bookings/show'
+  # get 'bookings/new'
+  # get 'bookings/create'
+  # get 'flats/index'
+  # get 'flats/show'
   devise_for :users
   root to: "pages#home"
   resources :flats, only: [ :index, :new, :show, :create ] do
