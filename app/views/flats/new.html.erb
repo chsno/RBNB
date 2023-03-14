@@ -1,20 +1,35 @@
 <div class="container mt-5">
   <div class="row">
     <div class="col-md-8 offset-md-2">
-      <h1 class="text-center mb-5">Create a New Flat</h1>
-
-      <%= simple_form_for @flat, html: { class: 'form-horizontal' } do |f| %>
-        <%= f.input :address, label: 'What is the address of your flat?', placeholder: 'Enter address', required: true, wrapper_html: { class: 'form-group' }, label_html: { class: 'col-sm-5 control-label' }, input_html: { class: 'form-control' } %>
-        <%= f.input :city, label: 'In which city is your flat located?', placeholder: 'Enter city', required: true, wrapper_html: { class: 'form-group' }, label_html: { class: 'col-sm-5 control-label' }, input_html: { class: 'form-control' } %>
-        <%= f.input :rooms, label: 'How many rooms are there in the flat?', placeholder: 'Enter number of rooms', required: true, wrapper_html: { class: 'form-group' }, label_html: { class: 'col-sm-5 control-label' }, input_html: { class: 'form-control' } %>
-        <%= f.input :price, label: 'Set a daily rental price', placeholder: 'Enter price', required: true, wrapper_html: { class: 'form-group' }, label_html: { class: 'col-sm-5 control-label' }, input_html: { class: 'form-control' } %>
-        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-        <div class="form-group">
-          <div class="col-sm-offset-3 col-sm-9">
-            <%= f.submit 'Create Flat', class: 'btn btn-primary' %>
-          </div>
+      <div class="card">
+        <div class="card-header">
+          <h2 class="text-center">Create a New Flat</h2>
         </div>
-      <% end %>
+        <div class="card-body">
+          <%= simple_form_for @flat, html: { class: 'form-horizontal' } do |f| %>
+            <div class="form-group">
+              <%= f.input :address, label: 'What is the address of your flat?', placeholder: 'Enter address', required: true, wrapper_html: { class: 'form-inputs' }, label_html: { class: 'col-sm-5 control-label' }, input_html: { class: 'form-control' } %>
+            </div>
+            <div class="form-group">
+              <%= f.input :city, label: 'In which city is your flat located?', placeholder: 'Enter city', required: true, wrapper_html: { class: 'form-inputs' }, label_html: { class: 'col-sm-5 control-label' }, input_html: { class: 'form-control' } %>
+            </div>
+            <div class="form-group">
+              <%= f.input :rooms, label: 'How many rooms are there in the flat?', placeholder: 'Enter number of rooms', required: true, wrapper_html: { class: 'form-inputs' }, label_html: { class: 'col-sm-5 control-label' }, input_html: { class: 'form-control' } %>
+            </div>
+            <div class="form-group">
+              <%= f.input :price, label: 'Set a daily rental price', placeholder: 'Enter price', required: true, wrapper_html: { class: 'form-inputs' }, label_html: { class: 'col-sm-5 control-label' }, input_html: { class: 'form-control' } %>
+            </div>
+            <div class="form-group">
+              <%= f.input :photos, as: :file, input_html: { multiple: true }, wrapper_html: { class: 'form-inputs' } %>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-offset-3 col-sm-9">
+                <%= f.submit 'Create Flat', class: 'btn btn-primary btn-block' %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
