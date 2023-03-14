@@ -1,2 +1,4 @@
-<h1>Bookings#show</h1>
-<p>Find me in app/views/bookings/show.html.erb</p>
+
+
+<h1><%= User.find(@booking.user_id)[:email] %> booking at <%=@flat.address%></strong> </h1>
+<h2> <%= @booking.start_date%> - <%= @booking.end_time%> </h2>

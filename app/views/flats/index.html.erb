@@ -2,7 +2,7 @@
 
 
 <ol>
-  <%= @flats.each do |flat| %>
+  <% @flats.each do |flat| %>
     <li> <%= flat.address%>, <%=flat.city%>
       <br> <p> <%= flat.rooms%> bedrooms </p>
       <br> <p> £<%= flat.price%> per night </p>
