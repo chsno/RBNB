@@ -5,3 +5,6 @@
 <h2> <%= @flat.address%>, <%=@flat.city%> </h2>
 <br> <p> <%= @flat.rooms%> bedrooms </p>
 <br> <p> £<%= @flat.price%> per night </p>
+
+<%= link_to "See my bookings", flat_bookings_path(@flat) %> <br>
+<%= link_to "New booking", new_flat_booking_path(@flat) %>
