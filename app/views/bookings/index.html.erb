@@ -2,6 +2,7 @@
 
 <ul>
   <% @flat.bookings.each do |booking| %>
+
     <% if booking.user == current_user %>
       <li> <%= User.find(booking.user_id)[:email] %>
       <%= booking.start_date%> - <%= booking.end_time%>
