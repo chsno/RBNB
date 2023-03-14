@@ -15,20 +15,18 @@
     <div class="cards">
       <% @flats.each do |flat| %>
         <div class="card-product">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" class="rounded img-fluid " style="height: 300px, width: 300px">
-          <div class="card-product-infos">
-            <div>
-              <h3>
-                <%= flat.address%>, <%=flat.city%>
-              </h3>
+            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" class="rounded img-fluid " style="height: 300px, width: 300px">
+            <div class="card-product-infos">
+              <div>
+                <h3>
+                  <%= link_to flat.address, flat_path(flat)%>, <%=flat.city%>
+                </h3>
+                <br> <p> <%= flat.rooms%> bedrooms
+                <br> £<%= flat.price%> per night </p>
+              </div>
             </div>
-              <br> <p> <%= flat.rooms%> bedrooms
-              <br> £<%= flat.price%> per night </p>
-
-          </div>
         </div>
       <% end %>
     </div>
-
   <%= link_to "New flat", new_flat_path(@flat) %>
 </body>
