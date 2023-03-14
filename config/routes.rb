@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'flats/show'
   devise_for :users
   root to: "pages#home"
-  resources :flats, only: [ :index, :show, :new, :create ]
+  resources :flats, only: [ :index, :new, :show, :create ]
 
   # resources :bookings, only [ :new, :create ]
 
