@@ -2,7 +2,7 @@
 <p>Find me in app/views/bookings/index.html.erb</p>
 
 <ul>
-  <%= @flat.bookings.each do |booking| %>
+  <% @flat.bookings.each do |booking| %>
     <li> <%= User.find(booking.user_id)[:email] %>
     <%= booking.start_date%> - <%= booking.end_time%>
     </li>
