@@ -9,7 +9,7 @@
 require "open-uri"
 
 reeta = User.create(email: "reeta@wagon.com", password:"123456", first_name: "Reeta", last_name: "Olivier")
-reeta_flat = Flat.create(address: "174 Manchester Road", city: "Manchester", rooms: 4, price: 250, user_id: reeta.id)
+reeta_flat = Flat.create(address: "174 Manchester Road, M16 0DZ", city: "Manchester", rooms: 4, price: 250, user_id: reeta.id)
 reeta_booking = Booking.create(start_date: "02/02/2022", end_time: "05/02/2022", user_id: reeta.id, flat_id: reeta_flat.id)
 man1 = URI.open("https://res.cloudinary.com/dtvlnkce6/image/upload/v1678892087/manchester_dekshc.jpg")
 man2 = URI.open("https://res.cloudinary.com/dtvlnkce6/image/upload/v1678817749/development/511hcnogopix6p8sfhdtt9lb7xmi.jpg")
