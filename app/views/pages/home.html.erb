@@ -1,2 +1,74 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<!-- app/views/pages/home.html.erb -->
+
+<div class="container mt-4">
+  <h1>Welcome to the Home Page</h1>
+
+  <div class="list mt-4">
+    <div class="item">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Create a Flat</h5>
+          <%= link_to "Create Flat", new_flat_path, class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Available Flats</h5>
+          <%= link_to "View Flats", flats_path, class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Account Settings</h5>
+          <%= link_to "Account Settings", edit_user_registration_path, class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<style>
+
+/* app/assets/stylesheets/application.css */
+
+.container {
+  margin-top: 40px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  border: none;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.btn {
+  color: white;
+  font-weight: bold;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+</style>
