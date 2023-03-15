@@ -9,7 +9,7 @@
 require "open-uri"
 
 reeta = User.create(email: "reeta@wagon.com", password:"123456", first_name: "Reeta", last_name: "Olivier")
-reeta_flat = Flat.create(address: "174 Manchester Road", city: "Manchester", rooms: 4, price: 250, user_id: reeta.id)
+reeta_flat = Flat.create(address: "174 Manchester Road, M16 0DZ", city: "Manchester", rooms: 4, price: 250, user_id: reeta.id)
 reeta_booking = Booking.create(start_date: "02/02/2022", end_time: "05/02/2022", user_id: reeta.id, flat_id: reeta_flat.id)
 man1 = URI.open("https://res.cloudinary.com/dtvlnkce6/image/upload/v1678892087/manchester_dekshc.jpg")
 man2 = URI.open("https://res.cloudinary.com/dtvlnkce6/image/upload/v1678817749/development/511hcnogopix6p8sfhdtt9lb7xmi.jpg")
@@ -30,7 +30,7 @@ charles_flat.photos.attach([io: paris2, filename: "paris2.jpg", content_type: "i
 charles_flat.photos.attach([io: paris3, filename: "paris3.jpg", content_type: "image/jeg"])
 charles_flat.save
 
-emma = User.create(email: "emma@wagon.com", password:"1357911", first_name: "Emma", last_name: "Mc)
+emma = User.create(email: "emma@wagon.com", password:"1357911", first_name: "Emma", last_name: "McKeown")
 emma_flat = Flat.create(address: "417 Belfast Boulevard", city: "Belfast", rooms: 1, price: 520, user_id: emma.id)
 emma_booking = Booking.create(start_date: "09/10/2022", end_time: "10/12/2022", user_id: emma.id, flat_id: emma_flat.id)
 bel1 = URI.open("https://res.cloudinary.com/dtvlnkce6/image/upload/v1678894106/beflast_2_bapede.jpg")
