@@ -1,14 +1,26 @@
-<h1>Bookings for: <strong><%=@flat.address%></strong> </h1>
+<h1> <%=@flat.address%></h1>
 
-<ul>
+<h3> You have <%=@flat.bookings.length%> upcoming reservations! </h3>
+<h6> Please see details below </h6>
+
+<ol>
   <% @flat.bookings.each do |booking| %>
 
     <% if booking.user == current_user %>
       <li> <%= User.find(booking.user_id)[:first_name]%> <%= User.find(booking.user_id)[:last_name]%>
-      <small><%= booking.start_date%> - <%= booking.end_time%></small>
+      <br>
+      <% days=(booking.end_time-booking.start_date)%>
+      <strong><%= days.round %> nights</strong>
+      <br>
+      <%= booking.start_date%> to <%= booking.end_time%>
+      <br>
+      <% income = days*@flat.price%>
+      Total cost: £<%=income.round%>
+      <br>
+      Status: <%= booking.status%>
       </li>
       <% end %>
   <% end %>
-</ul>
+</ol>
 <% console%>
-<%= link_to "New booking", new_flat_booking_path(@flat) %>
+<%= link_to "Make a new booking", new_flat_booking_path(@flat) %>
