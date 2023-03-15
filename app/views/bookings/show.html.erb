@@ -4,6 +4,5 @@
 <h2> <%= @booking.start_date%> - <%= @booking.end_time%> </h2>
 <h2> Booking status: <%= @booking.status%> </h2>
 
-<%= link_to "Change status", flat_path %>
-
+<%= link_to "Change status", edit_flat_booking_path %>
 <%= link_to "Back to flat", flat_path %>
