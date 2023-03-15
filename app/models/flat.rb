@@ -6,4 +6,7 @@ class Flat < ApplicationRecord
   validates :city, presence: true
   validates :price, presence: true
   validates :rooms, presence: true
+  # geocode stuff
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end
