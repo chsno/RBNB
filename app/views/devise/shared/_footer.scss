@@ -1,5 +1,5 @@
 .footer {
-    background: #F4F4F4;
+    background: #1c0707;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -31,7 +31,7 @@
 }
 
 .fixed-bottom {
-    position: fixed;
+    position: sticky;
     margin-top: 20px;
     bottom: 0;
     width: 100%;
