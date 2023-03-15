@@ -4,11 +4,11 @@
   <% @flat.bookings.each do |booking| %>
 
     <% if booking.user == current_user %>
-      <li> <%= User.find(booking.user_id)[:email]%>
-      <%= booking.start_date%> - <%= booking.end_time%>
+      <li> <%= User.find(booking.user_id)[:first_name]%> <%= User.find(booking.user_id)[:last_name]%>
+      <small><%= booking.start_date%> - <%= booking.end_time%></small>
       </li>
       <% end %>
   <% end %>
 </ul>
-
+<% console%>
 <%= link_to "New booking", new_flat_booking_path(@flat) %>
