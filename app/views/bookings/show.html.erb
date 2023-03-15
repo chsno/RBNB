@@ -1,9 +1,8 @@
 
 
-<h1><%= User.find(@booking.user_id)[:email] %> booking at <%=@flat.address%></strong> </h1>
+<h1><%= User.find(@booking.user_id)[:first_name]%>'s booking at <%=@flat.address%></strong> </h1>
 <h2> <%= @booking.start_date%> - <%= @booking.end_time%> </h2>
 <h2> Booking status: <%= @booking.status%> </h2>
 
-<%= link_to "Change status", flat_path %>
-
+<%= link_to "Change status", edit_flat_booking_path %>
 <%= link_to "Back to flat", flat_path %>

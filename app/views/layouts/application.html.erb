@@ -21,25 +21,69 @@
     <%= yield %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-
-  <footer class="fixed-bottom">
+<footer>
+  <div class="fixed-bottom">
     <div class="footer">
-      <div class="footer-links">
+      <div class="footer-links d-flex justify-content-center">
         <a href="#"><i class="fab fa-github"></i></a>
         <a href="#"><i class="fab fa-instagram"></i></a>
         <a href="#"><i class="fab fa-facebook"></i></a>
         <a href="#"><i class="fab fa-twitter"></i></a>
         <a href="#"><i class="fab fa-linkedin"></i></a>
       </div>
-      <div class="footer-copyright">
-      This footer is made with <i class="fas fa-heart"></i> at Le Wagon
+      <div class="footer-copyright text-center">
+        This footer is made with <i class="fas fa-heart"></i> at Le Wagon
       </div>
     </div>
-  </footer>
+  </div>
+</footer>
   </body>
   <style>
-body {
-  padding-bottom: 60px;
-}
-  </style>
+  body {
+    padding-bottom: 60px;
+  }
+
+  .footer {
+    background: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 25px;
+    padding: 20px 50px;
+    color: rgba(0, 0, 0, 0.3);
+    margin-top: 30px;
+  }
+
+  .footer-links {
+    display: flex;
+    align-items: center;
+  }
+
+  .footer-links a {
+    color: black;
+    opacity: 0.15;
+    text-decoration: none;
+    font-size: 24px;
+    padding: 0px 10px;
+  }
+
+  .footer-links a:hover {
+    opacity: 1;
+  }
+
+  .footer .fa-heart {
+    color: #d23333;
+  }
+
+  .fixed-bottom {
+    display: flex;
+    flex: 1;
+      justify-content: center;
+    margin-top: 20px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
+</style>
 </html>

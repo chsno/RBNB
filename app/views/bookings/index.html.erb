@@ -1,14 +1,49 @@
-<h1>Bookings for: <strong><%=@flat.address%></strong> </h1>
+<div class="container">
+  <div>
+    <h1> <%= @flat.address%></h1>
+  </div>
 
-<ul>
-  <% @flat.bookings.each do |booking| %>
+  <div >
+    <h3> You have <%=@flat.bookings.length%> upcoming reservations! </h3>
+  </div>
 
-    <% if booking.user == current_user %>
-      <li> <%= User.find(booking.user_id)[:email] %>
-      <%= booking.start_date%> - <%= booking.end_time%>
-      </li>
-      <% end %>
-  <% end %>
-</ul>
+  <div >
+    <p> Please see details below: </p>
+  </div>
 
-<%= link_to "New booking", new_flat_booking_path(@flat) %>
+
+  <ol>
+    <% @flat.bookings.each do |booking| %>
+      <div class="cards card-product">
+        <% if booking.user == current_user %>
+          <li class="d-flex ">
+          <div>
+            <%= User.find(booking.user_id)[:first_name]%> <%= User.find(booking.user_id)[:last_name]%>
+            <br>
+            <% days=(booking.end_time-booking.start_date)%>
+            <strong><%= days.round %> nights</strong>
+            <br>
+            <%= booking.start_date%> to <%= booking.end_time%>
+          </div>
+          <div>
+            <% income = days*@flat.price%>
+            Total cost: £<%=income.round%>
+            <br>
+            Status: <%= booking.status%>
+          </div>
+          <div>
+            <% if booking.status == "pending" %>
+              <i class="fa-solid fa-clock status-icons"></i>
+            <% elsif booking.status == "accepted"%>
+              <i class="fa-sharp fa-solid fa-circle-check status-icons"></i>
+            <% else %>
+              <i class="fa-sharp fa-solid fa-circle-xmark status-icons"></i>
+            <% end %>
+          </div>
+          </li>
+        <% end %>
+      </div>
+    <% end %>
+  </ol>
+  <%= link_to "Make a new booking", new_flat_booking_path(@flat) %>
+</div>
