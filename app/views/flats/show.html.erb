@@ -1,12 +1,41 @@
+<div class="container">
+  <div class="d-flex justify-content-between pt-4 pb-3">
+    <div>
+      <h2> <%= User.find(@flat.user_id)[:first_name]%>'s Place</h2>
+      <h3> <%=@flat.city%> </h3>
+    </div>
+    <div class="align-self-end text-right border">
+      <div class="border">
+        <p> <%= @flat.rooms%> bedrooms </p>
+        <p> £<%= @flat.price%> per night </p>
+      </div>
+      <p> <%= link_to "Request to stay at #{User.find(@flat.user_id)[:first_name]}'s place", new_flat_booking_path(@flat) %></p>
+    </div>
+  </div>
+  <div >
+    <% @flat.photos.each do |photo| %>
+      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
+  </div>
+  <br>
+  <%= link_to "See my bookings", flat_bookings_path(@flat) %>
+  <br>
+</div>
 
-<h2> <%= @flat.address%>, <%=@flat.city%> </h2>
-<br> <p> <%= @flat.rooms%> bedrooms </p>
-<br> <p> £<%= @flat.price%> per night </p>
-<% @flat.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
-
-<br>
-<%= link_to "See my bookings", flat_bookings_path(@flat) %>
-<br>
-<%= link_to "New booking", new_flat_booking_path(@flat) %>
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <% @flat.photos.each do |photo| %>
+      <div class="carousel-item active">
+        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<%# <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  <span class="sr-only">Previous</span>
+</a>
+<a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  <span class="sr-only">Next</span>
+</a> %>
