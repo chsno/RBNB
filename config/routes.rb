@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :flats, only: [ :index, :new, :show, :create ] do
     resources :bookings, only: [ :index, :new, :create, :show, :edit, :update]
   end
+  
 
   # resources :bookings, only [ :new, :create ]
 
