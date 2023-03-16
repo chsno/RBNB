@@ -10,7 +10,7 @@ class FlatsController < ApplicationController
     end
 
     if params[:query].present?
-      @flats = Flat.where("city ILIKE ?", "%#{params[:query]}%")
+      @flats = Flat.search_by_city_and_rooms(params[:query])
     else
       @flats = Flat.all
     end
