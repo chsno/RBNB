@@ -1,0 +1,36 @@
+<h1>My Flats</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Address</th>
+            <th>City</th>
+            <th>Rooms</th>
+            <th>Price</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @flats.each do |flat| %>
+            <tr>
+                <td>
+                    <%= flat.address %>
+                </td>
+                <td>
+                    <%= flat.city %>
+                </td>
+                <td>
+                    <%= flat.rooms %>
+                </td>
+                <td>
+                    <%= flat.price %>
+                </td>
+                <td>
+                    <%= link_to "View", flat_path(flat) %> |
+                        <%= link_to "Edit", edit_flat_path(flat) %> |
+                            <%= link_to "Delete", flat_path(flat), method: :delete, data: { confirm: 'Are you sure?' } %>
+                </td>
+            </tr>
+            <% end %>
+    </tbody>
+</table>

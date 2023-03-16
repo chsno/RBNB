@@ -8,7 +8,7 @@ class FlatPolicy < ApplicationPolicy
 
   def show?
     true
-  end
+  endw
 
   def create?
     true
