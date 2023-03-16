@@ -1,0 +1,127 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container-fluid">
+<%= link_to "#", class: "navbar-brand d-flex align-items-center" do %>
+  <%= image_tag "https://images.unsplash.com/photo-1633409361618-c73427e4e206?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80", class: "me-2" %>
+  <div class="d-flex flex-column">
+    <span class="fw-bold" style="font-size: 30px; line-height: 1; color : #ffff;margin-left: 30px">RBNB</span>
+    <span class="text-muted" style="font-size: 20px; line-height: 1; color : #ffff;margin-left: 30px">Rent your flat: make money!</span>
+  </div>
+<% end %>
+
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <ul class="navbar-nav me-auto">
+    <% if user_signed_in? %>
+      <li class="nav-item active">
+        <%= link_to "Home", "#", class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Messages", "#", class: "nav-link" %>
+      </li>
+      <li class="nav-item dropdown">
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-dropdown", data: { toggle: "dropdown" } %>
+        <ul class="dropdown-menu" aria-labelledby="navbar-dropdown">
+          <li>
+            <%= link_to "My flats", "#", class: "dropdown-item" %>
+          </li>
+          <li>
+            <%= link_to "Create Booking", "#", class: "dropdown-item" %>
+          </li>
+          <li>
+            <%= link_to "My Bookings", "#", class: "dropdown-item" %>
+          </li>
+          <li>
+            <%= link_to "Account Settings", "#", class: "dropdown-item" %>
+          </li>
+        </ul>
+      </li>
+    <% else %>
+      <li class="nav-item">
+        <%= link_to "Log in", new_user_session_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Rent your flat", "#", class: "nav-link" %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+  </div>
+</div>
+   <style>
+.navbar-lewagon {
+  display: flex;
+  justify-content: space-between;
+  background: #F16767;
+  padding: 10px;
+  top : 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar{
+  height : 150px;
+  position: sticky;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-lewagon .navbar-brand img:hover {
+  transform: rotate(360deg);
+}
+
+.navbar-lewagon .navbar-nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navbar-lewagon .navbar-nav .nav-item {
+  margin-right: 15px;
+}
+
+.navbar-lewagon .navbar-nav .nav-link {
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-lewagon .navbar-nav .nav-link:hover {
+  color: #f0ad4e;
+}
+
+.d-flex.flex-column {
+  margin-left: 10px;
+}
+
+.navbar-lewagon-scroll {
+  background: rgba(241, 103, 103, 0.8); /* Transparent background */
+  transition-delay: 0.3s; /* Delayed transition */
+}
+
+
+</style>
+
+
+<script>
+
+window.addEventListener("scroll", function () {
+  const navbar = document.querySelector(".navbar-lewagon");
+  if (navbar) {
+    if (window.scrollY >= 200) {
+      navbar.classList.add("navbar-lewagon-scroll");
+    } else {
+      navbar.classList.remove("navbar-lewagon-scroll");
+    }
+  }
+});
+
+
+  </script>
+
