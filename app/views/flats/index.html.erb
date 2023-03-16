@@ -1,6 +1,17 @@
 
+
+
 <h1 padding=5px>RBNB</h1>
-<h2 padding=5px>Available Flats</h2>
+
+<%= form_with url: flats_path, method: :get, class: "d-flex" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Explore destinations"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+
 <div class="d-flex p-2">
   <div class="cards">
     <% @flats.each do |flat| %>
@@ -23,7 +34,7 @@
     data-map-markers-value="<%= @markers.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
- 
+
 </div>
 
 <div class="d-flex justify-content-center">
