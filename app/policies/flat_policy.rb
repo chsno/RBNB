@@ -23,4 +23,8 @@ class FlatPolicy < ApplicationPolicy
     true
   end
 
+  def my_flats?
+    user
+  end
+
 end

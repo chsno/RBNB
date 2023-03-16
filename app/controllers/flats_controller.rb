@@ -41,6 +41,12 @@ class FlatsController < ApplicationController
   end
   
 
+  def my_flats
+    @flats = current_user.flats
+    authorize @flats
+  end
+
+
   private
 
   def flat_params

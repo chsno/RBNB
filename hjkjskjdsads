@@ -1,0 +1,25 @@
+[1mdiff --git a/app/assets/stylesheets/components/_index.scss b/app/assets/stylesheets/components/_index.scss[m
+[1mindex a69aefa..05fe4db 100644[m
+[1m--- a/app/assets/stylesheets/components/_index.scss[m
+[1m+++ b/app/assets/stylesheets/components/_index.scss[m
+[36m@@ -2,7 +2,6 @@[m
+ @import "alert";[m
+ @import "avatar";[m
+ @import "form_legend_clear";[m
+[31m-@import "navbar";[m
+ @import "forms";[m
+ @import "icon";[m
+ @import "map";[m
+[1mdiff --git a/app/views/flats/show.html.erb b/app/views/flats/show.html.erb[m
+[1mindex feccadc..12cc9bd 100644[m
+[1m--- a/app/views/flats/show.html.erb[m
+[1m+++ b/app/views/flats/show.html.erb[m
+[36m@@ -12,7 +12,7 @@[m
+       <p> <%= link_to "Request to stay at #{User.find(@flat.user_id)[:first_name]}'s place", new_flat_booking_path(@flat) %></p>[m
+     </div>[m
+   </div>[m
+[31m-  <div >[m
+[32m+[m[32m  <div class="d-flex justify-content-between">[m
+     <% @flat.photos.each do |photo| %>[m
+       <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>[m
+     <% end %>[m

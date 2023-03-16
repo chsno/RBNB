@@ -26,5 +26,14 @@ class BookingPolicy < ApplicationPolicy
     true
   end
 
+  def my_bookings?
+    user
+  end
+
+  def booking_requests?
+    true
+  end
+
+
 
 end
