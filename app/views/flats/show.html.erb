@@ -1,14 +1,18 @@
 <div class="container">
-  <div class="d-flex justify-content-between pt-4 pb-3">
-    <div>
-      <h2> <%= User.find(@flat.user_id)[:first_name]%>'s Place</h2>
-      <h3> <%=@flat.city%> </h3>
+  <div class="pt-4 ">
+    <h2  class="display-1"> <%= User.find(@flat.user_id)[:first_name]%>'s Place</h2>
+  </div>
+  <div >
+    <div class="d-flex">
+      <h3> <i class="fa-sharp fa-solid fa-location-dot"></i> <%=@flat.city%> </h3>
+      <p class="text-muted align-self-end"> (More than <%= @flat.bookings.count%> past visitors) </p>
     </div>
-    <div class="align-self-end border">
+    <div class="align-self-end">
       <div class="border">
         <p class="text-align-right"> <%= @flat.rooms%> bedrooms
         <br> £<%= @flat.price%> per night </p>
       </div>
+      <p> Perfect for short or long stays. Set in a historic building that was owned by the Manchester Brewery Company for 100 years, that now comprises of modern, stylish and comfortable apartments (some in the cellar that stored all of the beer!). </p>
       <p> <%= link_to "Request to stay at #{User.find(@flat.user_id)[:first_name]}'s place", new_flat_booking_path(@flat) %></p>
     </div>
   </div>
