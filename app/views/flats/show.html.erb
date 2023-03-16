@@ -12,24 +12,28 @@
       <p> <%= link_to "Request to stay at #{User.find(@flat.user_id)[:first_name]}'s place", new_flat_booking_path(@flat) %></p>
     </div>
   </div>
-<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <% @flat.photos.each do |photo| %>
-    <div class="carousel-item active">
-      <%= cl_image_tag photo.key%>
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <% @flat.photos.each do |photo| %>
+      <div class="carousel-item active">
+        <p class="d-flex justify-content-center"> <%= cl_image_tag(photo.key, width: 500, crop: :fill)%></p>
+      </div>
+      <% end %>
     </div>
-    <% end %>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <i class="fas fa-arrow-left" aria-hidden="true"></i>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <i class="fas fa-arrow-right" aria-hidden="true"></i>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-  <br>
-  <%= link_to "See my bookings", flat_bookings_path(@flat) %>
-  <br>
+
+  <div class="w-50 " style="height: 600px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+
 </div>

@@ -2,3 +2,17 @@
   height: 5px;
   width: 5px;
 }
+
+.carousel-control-prev {
+  left: -80px;
+  border-bottom: 0;
+  font-size: 40px;
+  color: #444;
+}
+
+.carousel-control-next {
+  right: -80px;
+  border-bottom: 0;
+  font-size: 40px;
+  color: #444;
+}
