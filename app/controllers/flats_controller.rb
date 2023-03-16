@@ -8,6 +8,13 @@ class FlatsController < ApplicationController
         lng: flat.longitude
       }
     end
+
+    if params[:query].present?
+      @flats = Flat.search_by_city_and_rooms(params[:query])
+    else
+      @flats = Flat.all
+    end
+
   end
 
   def show
