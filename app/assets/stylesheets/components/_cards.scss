@@ -13,6 +13,7 @@ h2 {
 
 h3 {
   font-weight: bold;
+  font-size: larger;
 }
 
 h3, h4, h5, p {
@@ -63,8 +64,15 @@ h3, h4, h5, p {
   min-width: 100px;
 }
 
-.card-product:hover {
-  color: grey;
+
+.address-link a {
+  text-decoration: none !important;
+  color:rgba(118,3,60,1);
+  font-size: 14px;
+}
+
+.address-link a:hover {
+  color: grey !important;
 }
 
 // Smallest device

@@ -21,10 +21,10 @@
             <div class="card-product-infos">
               <div>
                 <h3>
-                  <%= link_to flat.address, flat_path(flat)%>, <%=flat.city%>
+                  <div class="address-link"><%= link_to flat.address, flat_path(flat)%>, </div><%=flat.city%>
                 </h3>
-                <br> <p> <%= flat.rooms%> bedrooms
-                <br> £<%= flat.price%> per night </p>
+                 <p> Bedrooms: <strong><%= flat.rooms%></strong>  <br>
+                 Price/night: <strong>£<%= flat.price%></strong></p>
               </div>
             </div>
         </div>
