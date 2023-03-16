@@ -22,15 +22,17 @@
           <li class="nav-item dropdown">
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-dropdown", data: { toggle: "dropdown" } %>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbar-dropdown">
-
 <li>
-  <%= link_to "Bookings", booking_requests_path, class: "dropdown-item" %>
+  <%= link_to "My flats", my_flats_flats_path, class: "dropdown-item" %>
+</li>
+<li>
+  <%= link_to "Bookings Requests", booking_requests_path, class: "dropdown-item" %>
 </li>
 <li>
   <%= link_to "My Bookings", my_bookings_path, class: "dropdown-item" %>
 </li>
 <li>
-  <%= link_to "Account Settings", edit_user_registration_path(current_user.id), class: "dropdown-item" %>
+  <%= link_to "Account Settings", edit_user_registration_path, class: "dropdown-item" %>
 </li>
 
 

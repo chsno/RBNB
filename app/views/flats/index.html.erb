@@ -1,5 +1,5 @@
 
-<div class="container">
+<div class="container-fluid">
 
   <div>
     <p>Enter a <strong>city</strong>, <strong>number of guests</strong> or <strong>both</strong> to start exploring!</p>
@@ -17,7 +17,7 @@
     <div class="cards">
       <% @flats.each do |flat| %>
         <div class="card-product d-flex p-2">
-            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" class="rounded img-fluid " style="height: 300px, width: 300px">
+            <%= cl_image_tag flat.photos.first.key, height: 300, width: 400, crop: :fill %>
             <div class="card-product-infos">
               <div>
                 <h3>
