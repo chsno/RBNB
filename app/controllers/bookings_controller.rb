@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_flat
+  before_action :set_flat, except: [:booking_requests, :my_bookings]
 
   def index
     @bookings = policy_scope(Booking)
@@ -38,6 +38,16 @@ class BookingsController < ApplicationController
     authorize @booking
     @booking.save!
     redirect_to flat_booking_path(@booking)
+  end
+
+  def my_bookings
+    @bookings = current_user.bookings
+    authorize @bookings
+  end
+
+  def booking_requests
+    @bookings = Booking.joins(:flat).where(flat: {user: current_user})
+    authorize @bookings
   end
 
   private
