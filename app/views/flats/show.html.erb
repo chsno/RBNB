@@ -33,11 +33,15 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
+  <div>
+  </div>
 
-  <div class="w-50 " style="height: 600px;"
-    data-controller="map"
-    data-map-markers-value="<%= @markers.to_json %>"
-    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  <div class="d-flex justify-content-center" style="background-color: hsl(0, 87%, 89%); border-radius: 25px; padding: 31px;">
+    <div class="w-50 " style="height: 600px;"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
   </div>
 
 </div>
