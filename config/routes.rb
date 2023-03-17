@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   # get 'flats/index'
   # get 'flats/show'
   devise_for :users
-  root to: "pages#home"
-  resources :flats, only: [ :index, :new, :show, :create ] do
+  root to: "flats#index"
+    resources :flats, only: [ :index, :new, :show, :create ] do
     collection do
       get :my_flats
     end
