@@ -16,12 +16,19 @@ class FlatsController < ApplicationController
     else
       @flats = Flat.all
     end
-
   end
 
   def show
     @flat = Flat.find(params[:id])
     authorize @flat
+
+    @markers =
+      [
+        lat: @flat.latitude,
+        lng: @flat.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {flat: @flat}),
+        marker_html: render_to_string(partial: "marker")
+      ]
   end
 
   def new
@@ -39,13 +46,11 @@ class FlatsController < ApplicationController
       render "new", status: :unprocessable_entity
     end
   end
-  
 
   def my_flats
     @flats = current_user.flats
     authorize @flats
   end
-
 
   private
 
