@@ -1,6 +1,17 @@
 .status-icons {
-  height: 5px;
-  width: 5px;
+  font-size: 25px;
+}
+
+.icon-danger {
+  color: rgb(218, 72, 72) !important;
+}
+
+.icon-success{
+  color: rgb(103, 238, 103) !important;
+}
+
+.icon-warning {
+  color: rgb(209, 230, 95) !important;
 }
 
 .carousel-control-prev {

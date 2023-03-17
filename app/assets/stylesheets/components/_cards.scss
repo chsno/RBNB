@@ -1,5 +1,5 @@
 h1{
-  color: red;
+  color: rgb(59, 58, 58);
   font-weight: bold;
   padding: 5px;
   margin: 5px;
@@ -28,6 +28,7 @@ h3, h4, h5, p {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap:10px;
   max-height: 120px;
+  border-radius: 5px;
 }
 
 .card-product {
