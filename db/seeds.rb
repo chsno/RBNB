@@ -6,6 +6,9 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+Booking.destroy_all
+Flat.destroy_all
+User.destroy_all
 require "open-uri"
 
 reeta = User.create(email: "reeta@wagon.com", password:"123456", first_name: "Reeta", last_name: "Olivier")

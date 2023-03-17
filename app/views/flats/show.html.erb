@@ -12,7 +12,7 @@
         <p class="text-align-right"> <%= @flat.rooms%> bedrooms
         <br> £<%= @flat.price%> per night </p>
       </div>
-      <p> Perfect for short or long stays. Set in a historic building that was owned by the Manchester Brewery Company for 100 years, that now comprises of modern, stylish and comfortable apartments (some in the cellar that stored all of the beer!). </p>
+      <p> Perfect for short or long stays. Set in a historic building that was owned by the Local Brewery Company for 100 years, that now comprises of modern, stylish and comfortable apartments (some in the cellar that stored all of the beer!). </p>
       <p style="text-decoration: none; color: #9b2d2d; font-size: larger; font-weight: 700;"> <%= link_to "Request to stay at #{User.find(@flat.user_id)[:first_name]}'s place", new_flat_booking_path(@flat) %></p>
     </div>
   </div>

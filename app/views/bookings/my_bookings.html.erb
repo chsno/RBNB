@@ -45,7 +45,7 @@
                 <% end %>
               </div>
               <div class="mt-auto p-2 bd-highlight align-middle text-decoration-none">
-
+                <%= link_to "Cancel", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
               </div>
             </div>
           </li>
