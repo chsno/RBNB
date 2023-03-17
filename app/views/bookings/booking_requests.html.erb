@@ -45,7 +45,8 @@
                 <% end %>
               </div>
               <div class="mt-auto p-2 bd-highlight align-middle text-decoration-none">
-
+                <% flat = booking.flat_id%>
+                <%= link_to "Edit", edit_flat_booking_path(flat, booking), :class => "text-decoration-none edit-link" %>
               </div>
             </div>
           </li>

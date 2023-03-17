@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_flat, except: [:booking_requests, :my_bookings]
+  before_action :set_flat, except: [:booking_requests, :my_bookings, :destroy]
 
   def index
     @bookings = policy_scope(Booking)
@@ -37,7 +37,7 @@ class BookingsController < ApplicationController
     @booking.update(status: params[:booking][:status])
     authorize @booking
     @booking.save!
-    redirect_to flat_booking_path(@booking)
+    redirect_to flat_bookings_path(params[:flat_id])
   end
 
   def my_bookings
@@ -48,6 +48,13 @@ class BookingsController < ApplicationController
   def booking_requests
     @bookings = Booking.joins(:flat).where(flat: {user: current_user})
     authorize @bookings
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    authorize @booking
+    redirect_to my_bookings_path, status: :see_other
   end
 
   private

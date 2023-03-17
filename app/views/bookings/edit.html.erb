@@ -7,6 +7,8 @@
     <div class="card-body">
       <%= simple_form_for [@flat, @booking], data: { controller: 'flatpickr' } do |f| %>
         <div class="form-group form-inputs">
+          <%= f.input :start_time %>
+          <%= f.input :end_time%>
           <%= f.label :status %>
           <%= f.input :status, collection: ["pending", "accepted", "rejected"], wrapper: false %>
         </div>

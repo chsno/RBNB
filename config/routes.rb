@@ -8,12 +8,14 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "flats#index"
     resources :flats, only: [ :index, :new, :show, :create ] do
-    collection do
-      get :my_flats
+      collection do
+        get :my_flats
+      end
+      resources :bookings, only: [ :index, :new, :create, :show, :edit, :update]
+
     end
-    resources :bookings, only: [ :index, :new, :create, :show, :edit, :update]
-  end
-  
+    resources :bookings, only: :destroy
+
 
   get "booking_requests", to: "bookings#booking_requests"
   get "my_bookings", to: "bookings#my_bookings"
