@@ -77,7 +77,20 @@ h3, h4, h5, p {
 }
 
 .carousel {
-  min-height: 400px;
+  min-height: 500px;
+}
+
+.pink-format {
+  background-color: hsl(0, 87%, 89%);
+  border-radius: 25px;
+  padding: 31px;
+}
+
+a {
+  text-decoration: none !important;
+  color: #9b2d2d !important;
+  font-size: larger;
+  font-weight: 700;
 }
 
 // Smallest device
