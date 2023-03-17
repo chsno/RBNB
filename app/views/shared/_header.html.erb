@@ -1,10 +1,8 @@
-<div class="navbar navbar-expand-sm navbar-light bg-light">
-  <div class="container-fluid">
-    <%= link_to root_path, class: "navbar-brand d-flex align-items-center" do %>
+<div class="navbar navbar-expand-sm navbar-light" style="background-color: hsl(0, 83%, 67%)">  <div class="container-fluid">
+<%= link_to flats_path, class: "navbar-brand d-flex align-items-center" do %>
       <%= image_tag "https://images.unsplash.com/photo-1633409361618-c73427e4e206?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80", class: "me-2" %>
       <div class="d-flex flex-column">
-        <span class="fw-bold" style="font-size: 30px; line-height: 1; color : #ffff;margin-left: 30px">RBNB</span>
-        <span class="text-muted" style="font-size: 20px; line-height: 1; color : #ffff;margin-left: 30px">Rent your flat: make money!</span>
+        <span class="fw-bold" style="font-size: 30px; line-height: 1; color: #ffff;margin-left: 30px">RBNB</span>
       </div>
     <% end %>
 
@@ -16,38 +14,23 @@
       <ul class="navbar-nav ms-auto">
         <% if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to "Home", root_path, class: "nav-link" %>
+            <%= link_to "My Flats", my_flats_flats_path, class: "nav-link white-link" %>
           </li>
-
-          <li class="nav-item dropdown">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-dropdown", data: { toggle: "dropdown" } %>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbar-dropdown">
-<li>
-  <%= link_to "My flats", my_flats_flats_path, class: "dropdown-item" %>
-</li>
-<li>
-  <%= link_to "Bookings Requests", booking_requests_path, class: "dropdown-item" %>
-</li>
-<li>
-  <%= link_to "My Bookings", my_bookings_path, class: "dropdown-item" %>
-</li>
-<li>
-  <%= link_to "Account Settings", edit_user_registration_path, class: "dropdown-item" %>
-</li>
-
-
-
-            </ul>
+          <li class="nav-item">
+            <%= link_to "My Bookings", my_bookings_path, class: "nav-link white-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Booking Requests", booking_requests_path, class: "nav-link white-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Settings", edit_user_registration_path, class: "nav-link white-link" %>
           </li>
         <% else %>
           <li class="nav-item">
-            <%= link_to "Log in", new_user_session_path, class: "nav-link" %>
+            <%= link_to "Log in", new_user_session_path, class: "nav-link white-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Rent your flat", new_flat_path, class: "nav-link" %>
+            <%= link_to "Sign up", new_user_registration_path, class: "nav-link white-link" %>
           </li>
         <% end %>
       </ul>
@@ -55,72 +38,70 @@
   </div>
 </div>
 
-  <style>
-.navbar {
-  background-color: hsl(0, 83%, 67%);
-  height: 80px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
-}
-
-.container-fluid{
-  background-color: hsl(0, 83%, 67%);
-}
-.navbar-brand img {
-  width: 70px;
-}
-
-.navbar-brand .flex-column {
-  margin-left: 10px;
-}
-
-.nav-link {
-  color: #0d6efd;
-  margin-left: 20px;
-}
-
-.nav-link:hover {
-  color: #0d6efd;
-  text-decoration: underline;
-}
-
-.avatar {
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  margin-left: 10px;
-}
-
-.dropdown-menu {
-  right: 0;
-  left: auto;
-}
-
-.dropdown-item:hover {
-  background-color: #f8f9fa;
-  color: #0d6efd;
-}
-
-@media (max-width: 768px) {
-  .navbar-brand img {
-    width: 50px;
+<style>
+  /* Style for the navigation bar */
+  .navbar {
+    font-family: Arial, sans-serif;
   }
+
+ .nav-link{
+  color : green;
+ }
+  /* Style for the navigation brand */
+  .navbar-brand {
+    color: #ffffff;
+  }
+
+  .navbar-brand img {
+    max-height: 50px;
+    margin-right: 10px;
+  }
+
+  /* Style for the navigation links */
+  .navbar-nav .nav-link {
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 20px;
+    color: #ffffff;
+  }
+
+  /* Style for the toggle button */
+  .navbar-toggler {
+    border-color: #ffffff;
+  }
+
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+
+/* Style for the container */
+.container-fluid {
+max-width: 1200px;
+margin: 0 auto;
+}
+
+.white-link {
+  color: #ffffff !important;
+  }
+
+.white-link:hover {
+  color: black !important;
+}
+
+/* Style for the RBNB text */
+.navbar-brand .fw-bold {
+font-size: 30px;
+line-height: 1;
+color: #ffffff;
+margin-left: 30px;
+}
+
+.navbar-brand .text-muted {
+font-size: 20px;
+line-height: 1;
+color: #ffffff;
+margin-left: 30px;
 }
 </style>
 
-
-<script>
-
-window.addEventListener("scroll", function () {
-  const navbar = document.querySelector(".navbar-lewagon");
-  if (navbar) {
-    if (window.scrollY >= 200) {
-      navbar.classList.add("navbar-lewagon-scroll");
-    } else {
-      navbar.classList.remove("navbar-lewagon-scroll");
-    }
-  }
-});
-
-
-  </script>

@@ -76,6 +76,10 @@ h3, h4, h5, p {
   color: grey !important;
 }
 
+.carousel {
+  min-height: 400px;
+}
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
