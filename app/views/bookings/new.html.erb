@@ -4,9 +4,9 @@
       <h2>New booking for <%= @flat.address%></h2>
     </div>
     <div class="card-body">
-      <%= simple_form_for [@flat, @booking], html: { class: 'form-horizontal' } do |f| %>
+      <%= simple_form_for [@flat, @booking], data: { controller: 'flatpickr' } do |f|%>
         <div class="form-group form-inputs">
-          <%= f.input :start_date, as: :string, input_html: { data: { flatpickr_target: "startDate" } } %>
+          <%= f.input :start_time, as: :string, input_html: { data: { flatpickr_target: "startTime" } } %>
         </div>
         <div class="form-group form-inputs">
           <%= f.input :end_time, as: :string, input_html: { data: { flatpickr_target: "endTime" } } %>
@@ -19,3 +19,14 @@
   </div>
 </div>
 
+  <style>
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      margin-top: 50px;
+    }
+    .card {
+      border: 1px solid #ccc;
+      padding: 20px;
+    }
+  </style>

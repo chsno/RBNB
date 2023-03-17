@@ -20,10 +20,10 @@
           <div>
             <%= User.find(booking.user_id)[:first_name]%> <%= User.find(booking.user_id)[:last_name]%>
             <br>
-            <% days=(booking.end_time-booking.start_date)%>
+            <% days=(booking.end_time-booking.start_time)%>
             <strong><%= days.round %> nights</strong>
             <br>
-            <%= booking.start_date%> to <%= booking.end_time%>
+            <%= booking.start_time%> to <%= booking.end_time%>
           </div>
           <div>
             <% income = days*@flat.price%>

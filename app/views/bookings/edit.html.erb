@@ -1,8 +1,38 @@
-<h1>Review booking request for <%= @flat.address%></h1>
-<h2> <%= @booking.start_date%> - <%= @booking.end_time%> </h2>
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h2>Review booking request for <%= @flat.address %></h2>
+      <h3><%= @booking.start_time %> - <%= @booking.end_time %></h3>
+    </div>
+    <div class="card-body">
+      <%= simple_form_for [@flat, @booking] do |f| %>
+        <div class="form-group form-inputs">
+          <%= f.label :status %>
+          <%= f.input :status, collection: ["pending", "accepted", "rejected"], wrapper: false %>
+        </div>
+        <div class="form-actions">
+          <%= f.button :submit, "Submit", class: 'btn btn-primary btn-block' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
 
-<%= simple_form_for [@flat, @booking] do |f| %>
-  <%= f.input :status, collection: ["pending", "accepted", "rejected"] %>
-  <%= f.submit %>
-
-<% end %>
+<style>
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+  .card {
+    border: 1px solid #ccc;
+    padding: 20px;
+  }
+  .card-header {
+    margin-bottom: 20px;
+  }
+  h3 {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+</style>
