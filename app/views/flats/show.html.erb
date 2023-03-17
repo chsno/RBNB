@@ -2,7 +2,7 @@
   <div class="pt-4 ">
     <h2  class="display-1"> <%= User.find(@flat.user_id)[:first_name]%>'s Place</h2>
   </div>
-  <div >
+  <div class="pink-format">
     <div class="d-flex">
       <h3> <i class="fa-sharp fa-solid fa-location-dot"></i> <%=@flat.city%> </h3>
       <p class="text-muted align-self-end"> (More than <%= @flat.bookings.count%> past visitors) </p>
@@ -13,13 +13,15 @@
         <br> £<%= @flat.price%> per night </p>
       </div>
       <p> Perfect for short or long stays. Set in a historic building that was owned by the Manchester Brewery Company for 100 years, that now comprises of modern, stylish and comfortable apartments (some in the cellar that stored all of the beer!). </p>
-      <p> <%= link_to "Request to stay at #{User.find(@flat.user_id)[:first_name]}'s place", new_flat_booking_path(@flat) %></p>
+      <p style="text-decoration: none; color: #9b2d2d; font-size: larger; font-weight: 700;"> <%= link_to "Request to stay at #{User.find(@flat.user_id)[:first_name]}'s place", new_flat_booking_path(@flat) %></p>
     </div>
   </div>
-  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="padding: 30px;">
     <div class="carousel-inner">
+      <%# this could be refactored with .each_with_index and if index=1 then add aclass "active" %>
+      <% additional_classes = ["active"] %>
       <% @flat.photos.each do |photo| %>
-      <div class="carousel-item active">
+      <div class="carousel-item <%= additional_classes.pop %>">
         <p class="d-flex justify-content-center"> <%= cl_image_tag(photo.key, width: 500, crop: :fill)%></p>
       </div>
       <% end %>
@@ -33,15 +35,16 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-  <div>
+  <div class="d-flex justify-content-center" style="padding: 15px; font-size: large;">
+    Check out your new neighbourhood!
   </div>
-
-  <div class="d-flex justify-content-center" style="background-color: hsl(0, 87%, 89%); border-radius: 25px; padding: 31px;">
+  <div class="d-flex justify-content-center pink-format">
     <div class="w-50 " style="height: 600px;"
       data-controller="map"
       data-map-markers-value="<%= @markers.to_json %>"
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
   </div>
+
 
 </div>
