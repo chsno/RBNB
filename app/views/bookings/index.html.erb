@@ -22,11 +22,11 @@
                 <%= User.find(booking.user_id)[:first_name]%> <%= User.find(booking.user_id)[:last_name]%>
               </div>
               <div class="p-2 bd-highlight">
-                <% days=(booking.end_time-booking.start_date)%>
+                <% days=(booking.end_time-booking.start_time)%>
                 <strong><%= days.round %> nights</strong>
               </div>
               <div class="p-2 bd-highlight mb-2">
-                <%= booking.start_date%> to <%= booking.end_time%>
+                <%= booking.start_time%> to <%= booking.end_time%>
               </div>
             </div>
             <div class="d-flex align-items-end flex-column bd-highlight mb-1">

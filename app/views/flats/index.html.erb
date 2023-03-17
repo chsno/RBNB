@@ -1,5 +1,5 @@
 
-<div class="container-fluid">
+<div class="container">
 
   <div>
     <p>Enter a <strong>city</strong>, <strong>number of guests</strong> or <strong>both</strong> to start exploring!</p>
@@ -7,9 +7,9 @@
       <%= text_field_tag :query,
         params[:query],
         class: "form-control",
-        placeholder: "Start exploring!"
+        placeholder: "Start exploring..."
       %>
-      <%= submit_tag "Start exploring!", class: "btn btn-search" %>
+      <%= submit_tag "Search flats", class: "btn btn-general" %>
     <% end %>
   </div>
 
@@ -39,6 +39,6 @@
   </div>
 
   <div class="d-flex justify-content-center">
-      <%= link_to "Create a new flat", new_flat_path(@flat), class: "btn-ghost" %>
+      <%= link_to "Create a new flat", new_flat_path(@flat), class: "btn btn-general" %>
   </div>
 </div>

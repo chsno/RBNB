@@ -1,1 +1,57 @@
-<h1> my bookings </h1>
+<div class="container">
+  <div>
+    <h1 class="pt-3"> Your bookings </h1>
+  </div>
+
+  <div >
+    <h3> <%= current_user.first_name%>, you have <%=@bookings.length%> upcoming reservations! </h3>
+  </div>
+
+  <div >
+    <p> Please see details below: </p>
+  </div>
+
+
+  <ol class="ps-0">
+    <% @bookings.each do |booking| %>
+      <div class="cards card-product ps-3 pt-3 h-100">
+        <% if booking.user == current_user %>
+          <li class="d-flex w-100 p">
+            <div class="d-flex align-items-start flex-column bd-highlight mb-1 flex-grow-1">
+              <div class="fs-5 mb-auto p-2 bd-highlight">
+                <%= Flat.find(booking.flat_id)[:address]%>
+              </div>
+              <div class="p-2 bd-highlight">
+                <% days=(booking.end_time-booking.start_time)%>
+                <strong><%= days.round %> nights</strong>
+              </div>
+              <div class="p-2 bd-highlight mb-2">
+                <%= booking.start_time%> to <%= booking.end_time%>
+              </div>
+            </div>
+            <div class="d-flex align-items-end flex-column bd-highlight mb-1">
+              <div class="p-2 bd-highlight fs-5">
+                <% income = days*booking.flat.price%>
+                Total cost: £<%=income.round%>
+              </div>
+              <div class="mt-auto p-2 bd-highlight align-middle">
+                Status: <%=booking.status%>
+                <% if booking.status == "pending" %>
+                  <i class="fa-solid fa-clock status-icons icon-danger"></i>
+                <% elsif booking.status == "accepted"%>
+                  <i class="fa-sharp fa-solid fa-circle-check status-icons icon-success"></i>
+                <% else %>
+                  <i class="fa-sharp fa-solid fa-circle-xmark status-icons icon-warning"></i>
+                <% end %>
+              </div>
+              <div class="mt-auto p-2 bd-highlight align-middle text-decoration-none">
+
+              </div>
+            </div>
+          </li>
+        <% end %>
+      </div>
+    <% end %>
+  </ol>
+
+</div>
