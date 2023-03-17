@@ -1,1 +1,37 @@
-<h1> My flats </h1>
+<div class="container">
+  <h1>Your Flats</h1>
+
+  <table class="table">
+      <thead>
+          <tr>
+              <th scope="col">Address</th>
+              <th scope="col">City</th>
+              <th scope="col">Rooms</th>
+              <th scope="col">Price</th>
+          </tr>
+      </thead>
+      <tbody>
+          <% @flats.each do |flat| %>
+              <tr>
+                  <td>
+                      <%= flat.address %>
+                  </td>
+                  <td>
+                      <%= flat.city %>
+                  </td>
+                  <td>
+                      <%= flat.rooms %>
+                  </td>
+                  <td>
+                      <%= flat.price %>
+                  </td>
+                  <td>
+                      <%= link_to "View", flat_path(flat) %> |
+                          <%# <%= link_to "Edit", edit_flat_path(flat) %> |
+                              <%# <%= link_to "Delete", flat_path(flat), method: :delete, data: { confirm: 'Are you sure?' } %>
+                  </td>
+              </tr>
+              <% end %>
+      </tbody>
+  </table>
+</div>

@@ -37,7 +37,7 @@ class BookingsController < ApplicationController
     @booking.update(status: params[:booking][:status])
     authorize @booking
     @booking.save!
-    redirect_to flat_booking_path(@booking)
+    redirect_to flat_bookings_path(params[:flat_id])
   end
 
   def my_bookings
