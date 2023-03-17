@@ -19,9 +19,9 @@
         <div class="card-product d-flex p-2">
             <%= cl_image_tag flat.photos.first.key, height: 300, width: 400, crop: :fill %>
             <div class="card-product-infos">
-              <div>
+              <div class="rooms-prices">
                 <h3>
-                  <div class="address-link"><%= link_to flat.address, flat_path(flat)%>, </div><%=flat.city%>
+                  <div class="address-link"><%= link_to flat.address, flat_path(flat)%>, </div> <div class="size-12px"><%=flat.city%></div>
                 </h3>
                  <p> Bedrooms: <strong><%= flat.rooms%></strong>  <br>
                  Price/night: <strong>£<%= flat.price%></strong></p>
